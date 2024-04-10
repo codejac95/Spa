@@ -85,23 +85,23 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
   };
 
   return (
-    <div className ="booking">
+    <div className="booking">
       <Calendar onClickDay={handleDateSelect}/>
       {selectedDate && 
         <div className="selectedDate">
           <p>Datum: {selectedDate.toLocaleDateString()}</p>
-
-          <p>Förmiddag: {isSlotBooked('Morgon') ? 'Bokad' : 'Ledig'}
+  
+          <p>Förmiddag: <span className={isSlotBooked('Morgon') ? 'redText' : 'greenText'}>{isSlotBooked('Morgon') ? 'Bokad' : 'Ledig'}</span>
           <button onClick={() => handleBookingButton('Morgon')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
             {isSlotBooked('Morgon') ? 'Avboka förmiddag' : 'Boka förmiddag'}
           </button></p>
-
-          <p>Eftermiddag: {isSlotBooked('Eftermiddag') ? 'Bokad' : 'Ledig'}
+  
+          <p>Eftermiddag: <span className={isSlotBooked('Eftermiddag') ? 'redText' : 'greenText'}>{isSlotBooked('Eftermiddag') ? 'Bokad' : 'Ledig'}</span>
           <button onClick={() => handleBookingButton('Eftermiddag')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
             {isSlotBooked('Eftermiddag') ? 'Avboka eftermiddag' : 'Boka eftermiddag'}
           </button></p>
           
-          <p>Kväll: {isSlotBooked('Kväll') ? 'Bokad' : 'Ledig'}
+          <p>Kväll: <span className={isSlotBooked('Kväll') ? 'redText' : 'greenText'}>{isSlotBooked('Kväll') ? 'Bokad' : 'Ledig'}</span>
           <button onClick={() => handleBookingButton('Kväll')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
             {isSlotBooked('Kväll') ? 'Avboka kväll' : 'Boka kväll'}
           </button></p>
@@ -110,5 +110,4 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
     </div>
   );
 }
-
 export default Booking;

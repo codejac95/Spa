@@ -69,3 +69,10 @@ html, body {
   background-size: cover; 
   background-position: center;
 }
+
+.redText {
+  color:red
+}
+.greenText {
+  color: rgb(14, 198, 14)
+}
