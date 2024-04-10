@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import './App.css'
 
-type ValuePiece = Date | null;
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-type TimeSlot = 'morning' | 'afternoon' | 'evening';
+type TimeSlot = 'Morgon' | 'Eftermiddag' | 'Kväll';
 
 interface BookingInfo  {
   date: string;
@@ -13,8 +10,7 @@ interface BookingInfo  {
 };
 
 function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
-  const [date, setDate] = useState<Value>(new Date());
-  const [selectedDate, setSelectedDate] = useState<ValuePiece>(null)
+  const [selectedDate, setSelectedDate] = useState<Date>()
   const [bookedSlots, setBookedSlots] = useState<BookingInfo[]>([]);
   const [holidays, setHolidays] = useState<string[]>([])
 
@@ -31,7 +27,6 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
         const holidayArray = data.dagar.filter((day: any) => day.hasOwnProperty("helgdag"))
                                         .map((day: any) => day.datum);
         setHolidays(holidayArray);
-        console.log(holidayArray)
       })
   };
 
@@ -91,24 +86,24 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
 
   return (
     <div className ="booking">
-      <Calendar onChange={setDate} value={date} onClickDay={handleDateSelect}/>
+      <Calendar onClickDay={handleDateSelect}/>
       {selectedDate && 
         <div className="selectedDate">
           <p>Datum: {selectedDate.toLocaleDateString()}</p>
 
-          <p>Förmiddag: {isSlotBooked('morning') ? 'Bokad' : 'Ledig'}
-          <button onClick={() => handleBookingButton('morning')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
-            {isSlotBooked('morning') ? 'Avboka Förmiddag' : 'Boka Förmiddag'}
+          <p>Förmiddag: {isSlotBooked('Morgon') ? 'Bokad' : 'Ledig'}
+          <button onClick={() => handleBookingButton('Morgon')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
+            {isSlotBooked('Morgon') ? 'Avboka förmiddag' : 'Boka förmiddag'}
           </button></p>
 
-          <p>Eftermiddag: {isSlotBooked('afternoon') ? 'Bokad' : 'Ledig'}
-          <button onClick={() => handleBookingButton('afternoon')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
-            {isSlotBooked('afternoon') ? 'Avboka eftermiddag' : 'Boka eftermiddag'}
+          <p>Eftermiddag: {isSlotBooked('Eftermiddag') ? 'Bokad' : 'Ledig'}
+          <button onClick={() => handleBookingButton('Eftermiddag')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
+            {isSlotBooked('Eftermiddag') ? 'Avboka eftermiddag' : 'Boka eftermiddag'}
           </button></p>
           
-          <p>Kväll: {isSlotBooked('evening') ? 'Bokad' : 'Ledig'}
-          <button onClick={() => handleBookingButton('evening')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
-            {isSlotBooked('evening') ? 'Avboka Kväll' : 'Boka Kväll'}
+          <p>Kväll: {isSlotBooked('Kväll') ? 'Bokad' : 'Ledig'}
+          <button onClick={() => handleBookingButton('Kväll')} disabled={isHoliday(selectedDate) || isMonday(selectedDate)}>
+            {isSlotBooked('Kväll') ? 'Avboka kväll' : 'Boka kväll'}
           </button></p>
         </div>
       }

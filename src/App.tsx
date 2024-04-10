@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Warm from './Warm';
 import Cold from './Cold';
 import Start from './Start';
+import About from './About'
 import './App.css'
 
 function App() {
@@ -31,14 +32,16 @@ function App() {
   
   return (
     <>
-      <h1>Spa</h1>
+      <h1>Jacobs Spa & Vin</h1>
       <button onClick={() => setPage("start")}>Startsida</button>
       <div>
+          <button onClick={() => setPage("about")}>Om oss</button>
           <button onClick={() => setPage("warm")}>Varma avdelningen</button>
           <button onClick={() => setPage("cold")}>Kalla avdelningen</button>
       </div>
       {
         {
+          "about":<About/>,
           "warm": <Warm/>,
           "cold": <Cold/>,
           "start":<Start/>

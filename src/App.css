@@ -43,11 +43,11 @@
 }
 
 .warm {
-  background-color: red;
+background-color: rgb(250, 91, 59);
 }
 
 .cold {
- background-color: blue;
+background-color: aqua;
 }
 
 .start {
@@ -65,7 +65,7 @@ html, body {
 .background-image {
   width: 100%; 
   height: 70vh; 
-  background-image: url('startPicture.jpg');
+  background-image: url('spa.webp');
   background-size: cover; 
   background-position: center;
 }
