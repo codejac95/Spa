@@ -5,7 +5,6 @@ function Warm() {
   
   return (
     <>
-   
     <div className='warm'>
       <h1>Tider för varma avdelningen</h1>
     </div>

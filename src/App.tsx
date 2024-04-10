@@ -34,8 +34,8 @@ function App() {
     <>
       <h1>Jacobs Spa & Vin</h1>
       <button onClick={() => setPage("start")}>Startsida</button>
-      <div>
-          <button onClick={() => setPage("about")}>Om oss</button>
+      <button onClick={() => setPage("about")}>Om oss</button>
+      <div>      
           <button onClick={() => setPage("warm")}>Varma avdelningen</button>
           <button onClick={() => setPage("cold")}>Kalla avdelningen</button>
       </div>
