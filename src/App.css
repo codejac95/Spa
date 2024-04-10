@@ -1,0 +1,71 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.warm {
+  background-color: red;
+}
+
+.cold {
+ background-color: blue;
+}
+
+.start {
+  background-color: beige;
+
+}
+html, body {
+  height: 100vh; /* Säkerställ att både html och body tar upp hela fönstrets höjd */
+  margin: 0; /* Ta bort eventuella marginaler */
+  padding: 0; /* Ta bort eventuellt padding */
+  overflow: hidden; /* Förhindra sidscrollning */
+  background-color: beige;
+}
+
+.background-image {
+  width: 100%; /* Bredden på bilden ska täcka hela fönstrets bredd */
+  height: 70vh; /* Höjden på bilden ska täcka hela fönstrets höjd */
+  background-image: url('start3.jpg'); /* Ange sökvägen till din bildfil */
+  background-size: cover; /* Skala bilden så att den täcker hela bakgrunden */
+  background-position: center; /* Centrera bilden i bakgrunden */
+}
