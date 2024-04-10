@@ -10,7 +10,6 @@ type TimeSlot = 'morning' | 'afternoon' | 'evening';
 interface BookingInfo  {
   date: string;
   timeSlot: TimeSlot;
-
 };
 
 function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
@@ -24,7 +23,7 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
   },[])
 
   const fetchRedDays = () => {
-    fetch('http://sholiday.faboul.se/dagar/v2.1/2015')
+    fetch('http://sholiday.faboul.se/dagar/v2.1/2024')
       .then(response => {
         return response.json();
       })
@@ -32,6 +31,7 @@ function Booking({warmOrCold}: {warmOrCold: 'warm' | 'cold'}) {
         const holidayArray = data.dagar.filter((day: any) => day.hasOwnProperty("helgdag"))
                                         .map((day: any) => day.datum);
         setHolidays(holidayArray);
+        console.log(holidayArray)
       })
   };
 

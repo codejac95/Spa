@@ -7,7 +7,6 @@ import './App.css'
 function App() {
   const [page, setPage] = useState<string>("");
 
-
   useEffect(() => {
     if (!page) {
       const queryParameters = new URLSearchParams(window.location.search)
@@ -30,7 +29,6 @@ function App() {
     });
   }, [page]);
   
-
   return (
     <>
       <h1>Spa</h1>
@@ -39,7 +37,6 @@ function App() {
           <button onClick={() => setPage("warm")}>Varma avdelningen</button>
           <button onClick={() => setPage("cold")}>Kalla avdelningen</button>
       </div>
-     
       {
         {
           "warm": <Warm/>,
@@ -47,7 +44,6 @@ function App() {
           "start":<Start/>
         } [page]
       }
-
     </>
   );
 }

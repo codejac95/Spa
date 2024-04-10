@@ -55,17 +55,17 @@
 
 }
 html, body {
-  height: 100vh; /* Säkerställ att både html och body tar upp hela fönstrets höjd */
-  margin: 0; /* Ta bort eventuella marginaler */
-  padding: 0; /* Ta bort eventuellt padding */
-  overflow: hidden; /* Förhindra sidscrollning */
+  height: 100vh;
+  margin: 0; 
+  padding: 0; 
+  overflow: hidden; 
   background-color: beige;
 }
 
 .background-image {
-  width: 100%; /* Bredden på bilden ska täcka hela fönstrets bredd */
-  height: 70vh; /* Höjden på bilden ska täcka hela fönstrets höjd */
-  background-image: url('start3.jpg'); /* Ange sökvägen till din bildfil */
-  background-size: cover; /* Skala bilden så att den täcker hela bakgrunden */
-  background-position: center; /* Centrera bilden i bakgrunden */
+  width: 100%; 
+  height: 70vh; 
+  background-image: url('startPicture.jpg');
+  background-size: cover; 
+  background-position: center;
 }
