@@ -5,12 +5,12 @@ function Warm() {
   
   return (
     <>
-    <div className='warm'>
-      <h1>Tider för varma avdelningen</h1>
-    </div>
-    <div>
-      <Booking warmOrCold='warm'/>
-    </div>
+      <div className='warm'>
+        <h1>Tider för varma avdelningen</h1>
+      </div>  
+      <div>
+        <Booking warmOrCold='warm'/>
+      </div>
     </>
   );
 }
