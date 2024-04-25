@@ -118,6 +118,7 @@ import Calendar from 'react-calendar';
 import './App.css';
 
 type TimeSlot = 'Morgon' | 'Eftermiddag' | 'Kväll';
+// let uri = 'mongodb+srv://jacob950422:mdbjanssons@cluster0.x5uzdni.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 interface BookingInfo {
   date: string;
