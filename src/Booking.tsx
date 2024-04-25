@@ -190,7 +190,7 @@ function Booking({ warmOrCold }: { warmOrCold: 'warm' | 'cold' }) {
 
   const unbookSlot = (timeSlot: TimeSlot) => {
     if (selectedDate) {
-      fetch(`https://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
+      fetch(`http://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
         method: 'DELETE'
       })
         .then(response => {
