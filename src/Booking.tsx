@@ -134,7 +134,7 @@ function Booking({ warmOrCold }: { warmOrCold: 'warm' | 'cold' }) {
   }, []);
 
   const fetchRedDays = () => {
-    fetch('http://sholiday.faboul.se/dagar/v2.1/2024')
+    fetch('https://sholiday.faboul.se/dagar/v2.1/2024')
       .then(response => response.json())
       .then(data => {
         const holidayArray = data.dagar.filter((day: any) => day.hasOwnProperty("helgdag"))
@@ -159,7 +159,7 @@ function Booking({ warmOrCold }: { warmOrCold: 'warm' | 'cold' }) {
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
     const selectedDateString = date.toLocaleDateString().slice(0, 10);
-    fetch(`http://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDateString}`)
+    fetch(`https://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDateString}`)
       .then(response => response.json())
       .then(data => setBookedSlots(data));
   };
@@ -174,7 +174,7 @@ function Booking({ warmOrCold }: { warmOrCold: 'warm' | 'cold' }) {
         date: selectedDate.toLocaleDateString().slice(0, 10),
         timeSlot: timeSlot,
       };
-      fetch(`http://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
+      fetch(`https://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -190,7 +190,7 @@ function Booking({ warmOrCold }: { warmOrCold: 'warm' | 'cold' }) {
 
   const unbookSlot = (timeSlot: TimeSlot) => {
     if (selectedDate) {
-      fetch(`http://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
+      fetch(`https://sea-lion-app-pq9cy.ondigitalocean.app/${warmOrCold}booking/${selectedDate.toLocaleDateString().slice(0, 10)}/${timeSlot}`, {
         method: 'DELETE'
       })
         .then(response => {
